@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+}
+
+input {
+  margin: 0 20px;
+}
+
+.numar {
+  padding: 5px;
+  border-radius: 4px;
+  margin: 5px;
+  background-color: green;
+  color: white;
+  width: 30px;
+}

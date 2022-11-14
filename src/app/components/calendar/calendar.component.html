@@ -1,0 +1,24 @@
+<mat-form-field appearance="fill">
+  <mat-label>Choose a date</mat-label>
+  <input matInput [matDatepicker]="picker" #newDate>
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+<button (click)=" toggleShowTaskForm()  ">Add a Task on this date</button>
+<task-form (newTaskEvent)="addTask($event, newDate.value)" *ngIf="showTaskForm"> </task-form>
+<ul>
+  <li class="Taskuri" *ngFor="let task of tasksCal; let i = index">
+    {{task.taskDate}}{{task.taskName}}
+    <div *ngIf="disableDone[i]"><mat-icon class="check">done</mat-icon></div>
+    <button  (click)="deleteTask(i)" mat-icon-button color="warn" aria-label="Example icon button with a delete icon">
+      <mat-icon>delete</mat-icon>
+    </button>
+    <button (click)="done(i)" [disabled]="disableDone[i]"  mat-icon-button color="primary" aria-label="Example icon button with a delete icon">
+      <mat-icon>done</mat-icon>
+    </button>
+
+
+  </li>
+
+</ul>

@@ -1,0 +1,32 @@
+
+
+
+<div class="day-container">
+  <div class="day-title">Duminica</div>
+  <div class="day-tasks-container">
+    <div class="day-tasks-form">
+      <task-form class="addTaskForm" (newTaskEvent)="addTask($event)" > </task-form>
+    </div>
+    <div class="day-tasks">
+      <ul class="day-tasks-list" >
+
+        <li class="day-task" *ngFor="let task of tasks; let i = index">
+          {{task}}
+          <div *ngIf="disableDone[i]"><mat-icon class="check">done</mat-icon></div>
+          <div class="task-actions">
+          <button  class="delete-button" (click)="deleteTask(i)" mat-icon-button color="warn" aria-label="Example icon button with a delete icon">
+            <mat-icon>delete</mat-icon>
+          </button>
+          <button class="done-button" (click)="done(i)" [disabled]="disableDone[i]"  mat-icon-button color="primary" aria-label="Example icon button with a delete icon">
+            <mat-icon>done</mat-icon>
+          </button>
+        </div>
+
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+</div>
+

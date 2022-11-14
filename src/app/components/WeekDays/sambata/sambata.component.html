@@ -1,0 +1,25 @@
+<div class="HeaderZi">
+  <h2 class="TitluZi">Sambata</h2>
+  <button class="AddButton" (click)="toggleShowTaskForm()"><p class="Plus">Adauga Task</p></button>
+
+  <ul>
+    <li class="Taskuri" *ngFor="let task of tasks; let i = index">
+      {{task}}
+      <div *ngIf="disableDone[i]"><mat-icon class="check">done</mat-icon></div>
+      <button  (click)="deleteTask(i)" mat-icon-button color="warn" aria-label="Example icon button with a delete icon">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button (click)="done(i)" [disabled]="disableDone[i]"  mat-icon-button color="primary" aria-label="Example icon button with a delete icon">
+        <mat-icon>done</mat-icon>
+      </button>
+
+
+    </li>
+
+  </ul>
+
+
+  <task-form (newTaskEvent)="addTask($event)" *ngIf="showTaskForm"> </task-form>
+
+</div>
+

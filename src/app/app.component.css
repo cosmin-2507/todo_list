@@ -1,0 +1,202 @@
+.pageDiv {
+  margin-top: 50px;
+}
+
+.titlu {
+  font-size: 50px;
+  font-weight: bold;
+
+}
+
+.day-title {
+  font-size: 26pt;
+  font-weight: 300;
+  height: 40px;
+  background-color: #ff7800;
+  padding: 10px;
+  line-height: 38px;
+  color: white;
+  box-shadow: 1px 2px 7px #77777791;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 9
+}
+
+.currentDate {
+  color: white;
+  font-style: italic;
+  font-size: 14pt;
+  margin-left: 45px;
+}
+
+.SideBar {
+
+  margin-bottom: 0px;
+}
+
+.WeekDays {
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px 24px;
+  cursor: pointer;
+  width: 110px;
+  display: flex;
+  border-radius: 5px;
+  margin-top: 5px;
+  background-color: rgb(255 120 0);
+  justify-content: center;
+  color: white;
+}
+
+
+
+.day-tasks-form {
+  border: 1px solid rgb(243, 243, 243);
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px grey;
+  /* min-height: 150px; */
+  display: flex;
+  justify-content: center;
+  padding: 17px 22px;
+  min-width: 245px;
+}
+
+.task-form-button {
+  padding: 10px 24px;
+  cursor: pointer;
+  width: 110px;
+  display: flex;
+  border-radius: 5px;
+  margin-top: 25px;
+  background-color: rgb(3 173 45);
+  justify-content: center;
+  color: white;
+  align-self: center;
+}
+
+
+.task-form-container {
+  display: flex;
+  box-sizing: border-box;
+  height: 100%;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 100%;
+}
+
+.sideBar-form {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 25px;
+  padding-right: 25px;
+}
+
+.day-date {
+  display: block;
+  height: 30px;
+  font-family: 'Open sans';
+
+}
+
+.day-tasks {
+  display: block;
+  width: 95%;
+  margin-right: 20px;
+
+}
+
+.day-task {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #c9c9c9;
+  /* padding-top: 3px; */
+  align-items: center;
+  padding: 5px;
+}
+
+.day-task:last-child {
+  border-bottom: none;
+}
+
+.day-tasks-list {
+  max-height: 265px;
+  overflow: hidden;
+  overflow-y: scroll;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.day-tasks-container {
+  width: 60%;
+}
+
+.sideBar-form-tasks {
+  display: block;
+  justify-content: flex-start;
+
+}
+
+.form-calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar {
+  /* margin-left: 10px; */
+  margin-top: 10px;
+
+}
+
+.cal-tasks {
+  height: 40%;
+  overflow: hidden;
+  overflow-y: scroll;
+  display: block;
+  width: 75%;
+  height: 400px;
+  margin-right: 20px;
+}
+
+.cal-tasks-list {
+
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.cal-task {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #c9c9c9;
+  /* padding-top: 3px; */
+  align-items: center;
+  padding: 5px;
+}
+
+.weatherDiv {
+  display: flex;
+  background: white;
+  position: absolute;
+  top: 110px;
+  left: 173px;
+  /* border: 1px solid black; */
+  width: 100px;
+  border-radius: 6px;
+  padding: 17px;
+  justify-content: center;
+  box-shadow: 1px 1px 10px 2px #0000004a;
+}
+
+.weather-image {
+  width: 30px;
+}
+
+input[type="text"] {
+  padding: 8px;
+  border: 1px solid #a1a1a1;
+  border-radius: 5px;
+}

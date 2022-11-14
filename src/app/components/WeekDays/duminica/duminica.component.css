@@ -1,0 +1,156 @@
+.TitluZi {
+
+  font-size: 42px;
+  display: inline;
+  margin-bottom: 0;
+
+}
+
+.HeaderZi {
+  height: 52px;
+
+  width: 100%;
+  align-items: center;
+  display: inline-block;
+  vertical-align: middle;
+
+}
+
+.AddButton {
+  padding-left: 2px;
+  padding-top: 2px;
+  padding-right: 2px;
+  padding-bottom: 2px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.Plus {
+  font-size: 15px;
+  margin-bottom: 0;
+
+}
+
+ul {
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 3px 3px 10px grey;
+  border: 1px solid rgb(243, 243, 243);
+  padding: 0;
+}
+
+.Taskuri {
+  align-items: center;
+  border: 1px solid;
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 30px;
+  padding-left: 5px;
+  -webkit-user-select: none;
+  user-select: none;
+  flex-grow: 1;
+  box-sizing: border-box;
+}
+
+.Taskuri:not(:last-child) {
+  border-bottom: none;
+}
+
+.Taskuri:hover {
+  background-color: rgb(241, 238, 238);
+}
+
+.deleteTask {
+  display: flex;
+  padding-bottom: 0px;
+  padding-left: 5px;
+  padding-top: 0px;
+  padding-right: 5px;
+  margin-right: 5px;
+}
+
+.x {
+  font-size: 20px;
+  margin-bottom: 0;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.check {
+  margin-right: 20px;
+  ;
+}
+
+
+
+.TasksDiv {
+  display: flex;
+  width: 100%;
+  justify-content: right;
+  margin-right: 150px;
+  box-sizing: border-box;
+
+}
+
+.allDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.toDoP {
+  font-size: 20px;
+}
+
+
+/*jhvmhgkjhg*/
+
+
+.day-title {
+  font-size: 22pt;
+  font-weight: bold;
+}
+
+.day-tasks-container {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.day-tasks-form {
+  border: 1px solid rgb(243, 243, 243);
+  width: 15%;
+  margin-top: 20px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px grey;
+  margin-left: 20px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.day-tasks {
+  width: 75%;
+  margin-right: 20px;
+
+}
+
+.day-task {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  padding-top: 3px;
+}
+
+.day-task:last-child {
+  border-bottom: none;
+}
+
+.day-tasks-list {
+  border-radius: 5px;
+  padding: 5px;
+}

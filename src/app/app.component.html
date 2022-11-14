@@ -1,0 +1,111 @@
+<div class="day-title">{{ title }}
+  <div class="currentDate">
+    {{currentDate | date: 'shortDate' }}
+  </div>
+</div>
+<div class="pageDiv">
+<script src="app.component.ts"></script>
+
+
+
+
+
+
+<div  class="sideBar-form-tasks"   >
+ 
+  <div class="sideBar-form">
+  <div class="SideBar">
+
+
+  <div class="WeekDays" *ngFor="let day of weekDays; let i = index" (click)="changeDay(i)" (mouseover)="hoverDay(i)" (mouseout)="hoverOut()" >{{day}}</div>
+
+  <div class="WeekDays" (click)="toggleShowCalendar()"> Calendar </div>
+
+  </div>
+<div class="form-calendar">
+  <div class="day-tasks-form">
+<div class="task-form-container">
+    <label for="task-input" style="margin-bottom: 10px">Adauga un task: </label>
+    <input class="formInput" type="text" id="task-input" #newTask>
+    
+    <div class="calendar" (newTaskEvent)="addNewTask($event)" *ngIf="showCalendar">
+      <mat-form-field appearance="fill">
+      <mat-label>Alege o data</mat-label>
+      <input matInput [matDatepicker]="picker" (dateChange)="dateChange($event)" #newDate>
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field> 
+  </div>
+    <div class="task-form-button" type="button" (click)="addNewTask(newTask.value) ">Add Task</div>
+  </div>
+  
+  </div>
+  
+</div>
+<div class="weatherDiv" *ngIf="showFilteredWeather && this.filteredWeather">
+  <div class="weather-specs">
+    <div *ngIf="  this.filteredWeather!.weathercode >= 00 && this.filteredWeather!.weathercode <= 03 "><img class="weather-image" src="assets/sun.gif" alt=""></div>
+    <div *ngIf="(this.filteredWeather!.weathercode >= 04 && this.filteredWeather!.weathercode <= 19) || (this.filteredWeather!.weathercode >= 28 && this.filteredWeather!.weathercode <= 49)" ><img class="weather-image" src="assets/haze.gif" alt=""></div>
+    <div *ngIf="this.filteredWeather!.weathercode >= 50 && this.filteredWeather!.weathercode <= 69 || (this.filteredWeather!.weathercode >= 80 && this.filteredWeather!.weathercode <= 82 ) || (this.filteredWeather!.weathercode >= 20 && this.filteredWeather!.weathercode <= 27 )"><img class="weather-image" src="assets/rain.png" alt=""></div>
+    <div *ngIf="this.filteredWeather!.weathercode >= 70 && this.filteredWeather!.weathercode <= 79"><img class="weather-image" src="assets/snow.png" alt=""></div>
+    <div *ngIf="this.filteredWeather!.weathercode >= 83 && this.filteredWeather!.weathercode <= 99"><img class="weather-image" src="assets/sleet.png" alt=""></div>
+    
+    <div><img class="weather-image" src="assets/sunrise.gif" alt=""> {{this.filteredWeather!.sunrise}}</div>
+    <div><img class="weather-image" src="assets/max.png" alt=""> {{this.filteredWeather!.maxTemp}}</div>
+    <div><img class="weather-image" src="assets/min.png" alt=""> {{this.filteredWeather!.minTemp}} </div>
+    <div><img class="weather-image" src="assets/sunset.gif" alt=""> {{this.filteredWeather!.sunset}}</div>
+</div>
+</div>
+<div class="day-tasks-container" >
+  <h2 class="day-date"><span *ngIf="day">{{day}} || </span>{{myDate | date }} </h2>
+<div class="day-tasks">
+  
+  <ul class="day-tasks-list" >
+
+    <li class="day-task" *ngFor="let task of filteredTasks; let i = index">
+      {{task.taskName}}
+      <div *ngIf="task.done"><mat-icon class="check">done</mat-icon></div>
+      <div class="task-actions">
+        <button  (click)="deleteTask(task.id)" mat-icon-button color="warn" aria-label="Example icon button with a delete icon">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button (click)="done(task.id)" [disabled]="task.done"  mat-icon-button color="primary" aria-label="Example icon button with a delete icon">
+          <mat-icon>done</mat-icon>
+        </button>
+    </div>
+
+    </li>
+
+  </ul>
+
+</div>
+</div>
+
+</div>
+</div>
+<div class="cal-tasks">
+  <h2>Taskuri pe saptamanile viitoare:</h2>
+  <ul class="cal-tasks-list" >
+
+    <li class="cal-task" *ngFor="let task of sortByDateDesc; let i = index">
+       {{task.date}} || {{task.taskName}}
+      <div *ngIf="task.done"><mat-icon class="check">done</mat-icon></div>
+      <div class="task-actions">
+        <button  (click)="deleteTask(task.id)" mat-icon-button color="warn" aria-label="Example icon button with a delete icon">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button (click)="done(task.id)" [disabled]="task.done"  mat-icon-button color="primary" aria-label="Example icon button with a delete icon">
+          <mat-icon>done</mat-icon>
+        </button>
+    </div>
+
+    </li>
+
+  </ul>
+  
+</div>
+<div ></div>
+</div>
+ 
+

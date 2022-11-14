@@ -1,0 +1,32 @@
+
+<div class="sideBarContainer">
+  <div class="SideBar">
+
+
+  <button class="WeekDays" routerLink="luni">Luni</button>
+  <button class="WeekDays" routerLink="marti">Marti</button>
+  <button class="WeekDays" routerLink="miercuri">Miercuri</button>
+  <button class="WeekDays" routerLink="joi">Joi</button>
+  <button class="WeekDays" routerLink="vineri">Vineri</button>
+  <button class="WeekDays" routerLink="sambata">Sambata</button>
+  <button class="WeekDays" >Duminica</button>
+  <button class="WeekDays" routerLink="calendar"> Calendar </button>
+
+  </div>
+  <ul>
+    <li class="Taskuri" *ngFor="let task of tasks; let i = index">
+      {{task.taskName}}
+   <div *ngIf="disableDone[i]"><mat-icon class="check">done</mat-icon></div>
+      <button  (click)="deleteTask(i)" mat-icon-button color="warn" aria-label="Example icon button with a delete icon">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button (click)="done(i)" [disabled]="disableDone[i]"  mat-icon-button color="primary" aria-label="Example icon button with a delete icon">
+        <mat-icon>done</mat-icon>
+      </button>
+
+
+    </li>
+
+  </ul>
+
+</div>

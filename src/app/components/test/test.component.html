@@ -1,0 +1,17 @@
+<div> {{ titlu }} </div>
+
+
+<div class="container">
+  <input placeholder="Numar 1" [(ngModel)]="numar1">
+  +
+  <input placeholder="Numar 2" [(ngModel)]="numar2">
+
+  =
+
+  {{ rezultat }}
+
+  <button (click)="buttonClick()">Click me!</button>
+</div>
+
+<div *ngFor="let x of array1; let i = index" class="numar">{{i + 1}}. {{x}}</div>
+

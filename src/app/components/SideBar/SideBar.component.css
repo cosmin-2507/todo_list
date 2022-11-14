@@ -1,0 +1,23 @@
+.SideBar {
+
+  margin-bottom: 0px;
+  width: 200px;
+}
+
+.WeekDays {
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 1px solid;
+  padding: 10px 24px;
+  cursor: pointer;
+  width: 50%;
+  display: block;
+}
+
+.WeekDays:not(:last-child) {
+  border-bottom: none;
+}
+
+.WeekDays:hover {
+  background-color: #3e8e41;
+}
